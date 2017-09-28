@@ -1,0 +1,28 @@
+body, ul, li, div {
+  padding: 0;
+  margin: 0; }
+
+body {
+  font-family: "Microsoft Sans Serif";
+  background-color: #5cb3bc;
+  overflow: hidden;
+  height: 1920px; }
+
+.button {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  cursor: pointer;
+  background-color: #c0c0c0;
+  cursor: pointer;
+  text-align: center; }
+  .button:active {
+    background-color: #a0a0a0;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid black;
+    border-top: 1px solid black; }
+
+.hidden {
+  display: none; }

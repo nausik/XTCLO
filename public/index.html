@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>XTCLO</title>
+    <link rel="stylesheet" href="dist/app.bundle.css">
+  </head>
+  <body>
+    <div id="app">
+      <icon destination="Women" target="new">
+      </icon>
+      <icon destination="Men" target="new">
+      </icon>
+      <window v-for="window in windows" v-bind:window-id="window[0]" :key="window[0]"  :root="window[1]"></window>
+      <bottom-bar v-bind:windows="windows"></bottom-bar>
+    </div>
+  </body>
+  <script src="/dist/vendor.bundle.js"></script>
+  <script src="/dist/app.bundle.js"></script>
+</html>

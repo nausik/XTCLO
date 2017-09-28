@@ -1,0 +1,21 @@
+$font: "Microsoft Sans Serif";
+
+$colors: (
+  cyan: #5cb3bc,
+  gray: #c0c0c0,
+  blue: #010081
+);
+
+@mixin border($state, $width){
+  @if ($state == 'normal') {
+    border-bottom: $width solid black;
+    border-right: $width solid black;
+    border-left: $width solid white;
+    border-top: $width solid white;
+  } @else if ($state == 'active') {
+    border-bottom: $width solid white;
+    border-right: $width solid white;
+    border-left: $width solid black;
+    border-top: $width solid black;
+  }
+}
