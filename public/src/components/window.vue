@@ -12,6 +12,10 @@
         <icon destination="men shirts" v-bind:target="windowId">
         </icon>
     </div>
+    <div v-if="isCurrentPage('Women')">
+        <icon destination="women coats" v-bind:target="windowId">
+        </icon>
+    </div>
     <div v-if="isCurrentPage('info')" class="info_page">
         <h2>Concept for XTCLO store</h2>
         <div>
@@ -21,14 +25,53 @@
     <div v-if="isCurrentPage('men shirts')" class="tabs_page">
         <div class="left_bar">
             <tabs :options="{ useUrlFragment: false }">
-            <tab name="First tab">
-            <img src="https://i.imgur.com/GLrerIhg.png">
+            <tab name="Front">
+            <img src="https://i.imgur.com/U5RNoax.jpg">
             </tab>
-            <tab name="Second tab">
-            <img src="https://i.imgur.com/ygzMi1k.png">
+            <tab name="Back">
+            <img src="https://i.imgur.com/KVIsMKR.jpg">
             </tab>
-            <tab name="Third tab">
-            <img src="https://i.imgur.com/GLrerIhg.png">
+            <tab name="Closeup">
+            <img src="https://i.imgur.com/5Y4x1Mc.jpg">
+            </tab>
+            </tabs>
+        </div>
+        <div class="right_bar">
+            <div style="padding-right: 10px;">
+                <div>
+                    Size
+                </div>
+                <div class="input">
+                    <select class="size_select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+                <div>
+                    Amount
+                </div>
+                <div class="input">
+                    <input type="number" value="1" min="1" max="5" class="amount_input">
+                </div>
+                <div>
+                    <button class="button add_to_cart">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div v-if="isCurrentPage('women coats')" class="tabs_page">
+        <div class="left_bar">
+            <tabs :options="{ useUrlFragment: false }">
+            <tab name="Front">
+            <img src="https://i.imgur.com/mQekgJu.jpg">
+            </tab>
+            <tab name="Side">
+            <img src="https://i.imgur.com/SHEyCND.jpg">
+            </tab>
+            <tab name="Back">
+            <img src="https://i.imgur.com/mOJaIYS.jpg">
             </tab>
             </tabs>
         </div>
@@ -132,6 +175,7 @@ export default {
     position: fixed;
     left: 30%;
     top: 30%;
+    z-index: 100;
     .header {
         height: 20px;
         background-color: map-get($colors, blue);
@@ -198,8 +242,10 @@ export default {
 }
 </style>
 
-
 <style lang="scss">
+
+@import '~styles/variables';
+
 .tabs-component-tabs {
     align-items: stretch;
     display: flex;
@@ -246,7 +292,7 @@ export default {
     height: 100%;
 }
 .handle {
-    border: none;
-    background: transparent;
+    border: none !important;
+    background: transparent !important;
 }
 </style>
