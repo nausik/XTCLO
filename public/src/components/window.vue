@@ -21,6 +21,9 @@
         <div>
             Author: <a href="https://github.com/nausik">Artem Barbyniahra</a>
         </div>
+        <div>
+            Source: <a href="https://github.com/nausik/XTCLO">https://github.com/nausik/XTCLO</a>
+        </div>
     </div>
     <div v-if="isCurrentPage('men shirts')" class="tabs_page">
         <div class="left_bar">
