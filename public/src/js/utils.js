@@ -3,18 +3,20 @@
  }
 
  export default {
-     deleteFrom2DArray: (arr, element) => {
+     excludeFromWindowsArray: (arr, element) => {
          return arr.filter(el => {
              return el[0] !== element;
          });
      },
 
-     generateId: () => {
-         let text = "";
-         const POSSIBLE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+     generateId: (len) => {
+         const DICTIONARY = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-         for (var i = 0; i < 5; i++)
-             text += POSSIBLE.charAt(Math.floor(Math.random() * POSSIBLE.length));
+         let text = "";
+
+         for (var i = 0; i < len; i++){
+             text += DICTIONARY.charAt(Math.floor(Math.random() * DICTIONARY.length));
+         }
 
          return text;
      },

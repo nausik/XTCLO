@@ -34,38 +34,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bottom_bar{
-  background-color: #c0c0c0;
-  width: 100%;
-  height: 30px;
-  border-top: 1px solid white;
-  position: fixed;
-  bottom: 0;
-  
-}
 
-.start_button{
-  width: 80px;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
-  border-left: 2px solid white;
-  border-top: 2px solid white;
-  height:21px;
-  margin-top:2px;
-  margin-left: 2px;
-  text-align: center;
-  line-height: 21px;
-  float: left;
-}
+@import '~styles/variables';
 
-.start_button:active{
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-bottom: 1px solid white;
-  border-right: 1px solid white;
-}
+.bottom_bar {
+    background-color: map-get($colors, gray);
+    width: 100%;
+    height: 30px;
+    border-top: 1px solid white;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    .start_button {
+        @include border('normal', 2px);
+        width: 80px;
+        height: 21px;
+        margin-top: 2px;
+        margin-left: 2px;
+        text-align: center;
+        line-height: 21px;
 
-.clearfix{
-  clear: both;
+        &:active {
+          @include border('active', 2px);
+        }
+    }
 }
 </style>

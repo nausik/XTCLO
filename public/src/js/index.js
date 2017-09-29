@@ -35,11 +35,11 @@ const app = new Vue({
     },
     created: function() {
         this.$on('close', id => {
-            this.windows = Utils.deleteFrom2DArray(this.windows, id);
+            this.windows = Utils.excludeFromWindowsArray(this.windows, id);
         });
 
         this.eventHub.$on('addNewWindow', root => {
-            let new_window_id = Utils.generateId();
+            let new_window_id = Utils.generateId(5);
 
             this.windows.push([new_window_id, root]);
             this.eventHub.$emit('setWindowState', new_window_id, root);

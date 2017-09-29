@@ -56,7 +56,6 @@ module.exports = {
   margin-left: 2px;
   padding-left: 5px;
   line-height: 22px;
-  float: left;
   margin-left: 10px;
   cursor: pointer;
   font-size:13px;

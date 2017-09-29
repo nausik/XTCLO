@@ -1,5 +1,5 @@
-const PATH = require('path'),
-    WEBPACK = require('webpack'),
+const Path = require('path'),
+    Webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -8,12 +8,12 @@ module.exports = {
         vendor: ['vue', 'vue-draggable-resizable']
     },
     output: {
-        path: PATH.resolve(__dirname, './public/dist/'),
+        path: Path.resolve(__dirname, './public/dist/'),
         filename: '[name].bundle.js'
     },
     plugins: [
-        new WEBPACK.optimize.UglifyJsPlugin(),
-        new WEBPACK.optimize.CommonsChunkPlugin({
+        new Webpack.optimize.UglifyJsPlugin(),
+        new Webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
             filename: "vendor.bundle.js"
         }),
@@ -25,9 +25,9 @@ module.exports = {
     resolve: {
         alias: {
             vue: 'vue/dist/vue.js',
-            styles: PATH.resolve(__dirname, './public/src/css/'),
-            components: PATH.resolve(__dirname, './public/src/components/'),
-            js: PATH.resolve(__dirname, './public/src/js/')
+            styles: Path.resolve(__dirname, './public/src/css/'),
+            components: Path.resolve(__dirname, './public/src/components/'),
+            js: Path.resolve(__dirname, './public/src/js/')
         }
     },
     module: {

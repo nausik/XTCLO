@@ -3,8 +3,13 @@
   <div class="left_bar">
     XTCLO
   </div>
-  <div style="padding-left: 29px; margin-top: -20px;">
-    waasdasdasd
+  <div class="menu_button" v-on:click="openWindow('info')">
+    <div class="icon">
+      <img src="https://i.imgur.com/nclAViG.png">
+    </div>
+    <div>
+      <span class="first_letter">I</span>nfo
+    </div>
   </div>
 </div>
 </template>
@@ -18,6 +23,12 @@ export default {
             visible: false
         };
     },
+    methods:{
+      openWindow: function(window_type){
+        this.eventHub.$emit('addNewWindow', window_type);
+        this.visible = !this.visible;
+      }
+    },
     created: function() {
       this.eventHub.$on('toggleStartMenu', () => {
         this.visible = !this.visible;
@@ -27,6 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @import '~styles/variables';
 
 .start_menu{
@@ -51,5 +63,28 @@ export default {
     color: #aaa;
     font-weight: bold;
   }
+
+    .menu_button{
+    margin-left: 29px;
+    margin-top: -20px;
+    cursor: pointer;
+    height: 42px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .icon{
+      margin-right: 5px;
+    }
+
+    &:hover{
+      background-color: #0e5be7;
+    }
+
+    .first_letter{
+      text-decoration: underline;
+    }
+  }
 }
+
 </style>

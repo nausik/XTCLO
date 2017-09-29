@@ -37,24 +37,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icon{
-  cursor: pointer;
-  margin-top:25px;
-  margin-left: 25px;
-  width: 70px;
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: 1px solid rgba(0,0,0,0);
-}
-
-.icon.active{
-  border: 1px dashed #c0c0c0;
-  background-color: rgba(0,0,255,0.2);
-}
-
-.icon .text{
-  font-size: 13px;
-  text-transform: capitalize;
+.icon {
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 70px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    &.active {
+        border: 1px dashed #c0c0c0;
+        background-color: rgba(0, 0, 255, 0.2);
+    }
+    .text {
+        font-size: 13px;
+        text-transform: capitalize;
+    }
 }
 </style>
